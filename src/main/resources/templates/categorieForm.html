@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinidWeb - GuardarImg</title>
+    <link rel="stylesheet" th:href="@{css/stylelogin.css}">
+    <link rel="stylesheet" th:href="@{css/stylesHeader.css}">
+</head>
+<body>
+	<div>
+		<div th:insert="layout/header :: header"></div>
+		<br>
+		<img alt="" th:src="@{images/dos.png}" style="width: 106vh; height: 52vh;">
+	</div>
+	
+	
+	<div class="login-container">
+        <div class="login-box">
+            <h2>Cargar Producto</h2>
+            <form th:action="@{categoria}" th:object="${img}" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="text" name="name" th:field="*{nombre}" required>
+                    <label for="username">Nombre</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="descripcion" th:field="*{descripcion}">
+                    <label for="descripcion">Decripcion</label>
+                </div>
+                <div class="input-group">
+                	
+                    <input type="file" name="file" >
+                    <label for="file">Producto</label>
+                </div>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+            <a class="register" th:href="@{/listImg}">Ver</a>
+        </div>
+    </div>
+	
+</body>
+</html>

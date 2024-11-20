@@ -1,0 +1,269 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 100px;
+    background-color: #f0f4f8;
+}
+
+.content {
+    max-width: 50%;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    background-color: #0073e6;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Estilo del carrusel */
+.banner-carousel {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-right: -5%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: none;
+}
+
+.carousel-slide img:first-child {
+    display: block;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Sección de categorías */
+.categories-section {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Fondo con degradado */
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Contenedor de las tarjetas (carrusel) */
+.carousel {
+    display: flex;
+    overflow: hidden; /* Para ocultar las tarjetas fuera de la vista */
+    width: 80%; /* Ajustar el tamaño para que sea más estrecho */
+}
+
+/* Tarjetas individuales del carrusel */
+card {
+    flex: 0 0 33.33%; /* Mostrar 3 tarjetas a la vez */
+    margin: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.5s ease; /* Animación suave */
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Estilos de las flechas de navegación del carrusel */
+.prev-arrow, .next-arrow {
+    position: absolute;
+    background-color: #0073e6;
+    border: none;
+    color: white;
+    padding: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%; /* Redondear las flechas */
+    width: 40px; /* Ajustar ancho */
+    height: 40px; /* Ajustar altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Flecha izquierda */
+.prev-arrow {
+    left: 10px; /* Aumenta la separación desde el borde */
+}
+
+/* Flecha derecha */
+.next-arrow {
+    right: 10px; /* Aumenta la separación desde el borde */
+}
+
+
+/* Estilo del botón Ver todo */
+.view-all-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efecto hover del botón Ver todo */
+.view-all-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Contenedor de las tarjetas ocultas */
+.hidden-cards {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Estilo para las tarjetas ocultas cuando se muestran */
+.hidden-cards .card {
+    display: inline-block;
+}
+
+/* Chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+}
+
+.chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.chatbot-header-info {
+    display: flex;
+    align-items: center;
+}
+
+.chatbot-logo {
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.chatbot-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.bot-message {
+    background-color: #d0e8ff;
+    text-align: left;
+}
+
+.user-message {
+    background-color: #f1f0f0;
+    text-align: right;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    width: calc(100% - 50px);
+    outline: none;
+    border-top: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.open-chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+

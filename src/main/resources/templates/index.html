@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinWeb - Comienza a Vender</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}">   
+    <link rel="stylesheet" th:href="@{css/stylesHeader.css}">
+</head>
+<body>
+    <!-- Header con logo y menú de navegación -->
+ 	<div th:insert="layout/header :: header"></div>
+
+   <!-- Sección principal con título grande -->
+   <section class="main-section">
+    <div class="content" >
+        <h1>Comienza a vender con FinWeb</h1>
+        <p>Crea una cuenta de vendedor para llegar a millones de clientes y hacer crecer tu negocio. Aprovecha las herramientas para contar tu historia y fortalecer tus conexiones.</p>
+        <a th:href="@{register}" sec:authorize="!isAuthenticated()"><button class="cta-btn">Regístrate</button></a>
+    </div>
+    <!-- Carrusel del banner -->
+    <div class="banner-carousel">
+        <div class="carousel-slide">
+            <img class="img_banner1" th:src="@{images/tres.png}" alt="Banner 1">
+            <img th:src="@{images/dos.png}" alt="Banner 2">
+            <img th:src="@{images/dos1.jpg}" alt="Banner 3">
+            <img th:src="@{images/cuat.jpg}" alt="Banner 4">
+        </div>
+    </div>
+</section>
+
+
+<!-- Sección de compra por categoría -->
+<section class="categories-section">
+    <h2>Compra por categoría</h2>
+    <div class="carousel-container">
+        <button class="prev-arrow">←</button>
+        <div class="carousel">
+            <div class="card">
+                <img th:src="@{images/1.jpg}" alt="Teléfonos y accesorios">
+                <h3>Teléfonos y Accesorios</h3>
+                <p>Los mejores precios en Teléfonos y Smartphones.</p>
+            </div>
+            <div class="card">
+                <img th:src="@{images/2.jpg}" alt="Accesorios para computadoras">
+                <h3>Accesorios para Computadoras</h3>
+                <p>Contamos con toda la tecnología para tu computadora, laptop o tablet.</p>
+            </div>
+            <div class="card">
+                <img th:src="@{images/3.jpg}" alt="Otros artículos">
+                <h3>Otros Artículos</h3>
+                <p>Contamos con una gran variedad de artículos en tecnología.</p>
+            </div>
+            <div class="card">
+                <img th:src="@{images/4.jpg}" alt="Otros artículos">
+                <h3>Otros Artículos</h3>
+                <p>Contamos con una gran variedad de artículos en tecnología.</p>
+            </div>
+            <div class="card">
+                <img th:src="@{images/5.jpg}" alt="Otros artículos">
+                <h3>Otros Artículos</h3>
+                <p>Contamos con una gran variedad de artículos en tecnología.</p>
+            </div>
+        </div>
+        <button class="next-arrow">→</button>
+    </div>
+    <button class="view-all-btn">Ver todo</button>
+    <div class="hidden-cards" style="display: none;">
+        <!-- Tarjetas adicionales aquí -->
+        <div class="card">
+            <img src="@{images/5.jpg}" alt="Accesorios Extra">
+            <h3>Accesorios Extra</h3>
+            <p>Más opciones tecnológicas para tus necesidades.</p>
+        </div>
+    </div>
+</section>
+ <!-- Ventana flotante del chatbot -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <div class="chatbot-header-info">
+                <img src="/img/halo.png" alt="Logo de FINDWEB" class="chatbot-logo">
+                <span class="chatbot-name">FINDWEB</span>
+            </div>
+            <button id="close-chatbot">X</button>
+        </div>
+        <div class="chat-box" id="chat-box">
+        </div>
+        <input type="text" id="user-input" placeholder="Escribe un mensaje..." autocomplete="off">
+        <button id="send-btn">Enviar</button>
+    </div>
+    
+
+    <!-- Botón flotante para abrir el chatbot -->
+    <button id="open-chatbot" class="open-chatbot-btn">💬</button>
+
+    <script th:src="@{js/scriptB.js}"></script>
+
+    <!-- Footer opcional -->
+    <footer>
+        <p>© 2024 FinWeb. Todos los derechos reservados.</p>
+    </footer>
+    <script th:src="@{js/script.js}"></script>
+	<!--<script th:src="@{js/script2.js}"></script>-->
+</body>
+</html>
