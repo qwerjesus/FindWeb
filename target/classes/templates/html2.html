@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración</title>
+    <style>
+        /* Estilos en azul y gris */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            background-color: #f0f4f8;
+        }
+        .container {
+            width: 900px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 40px;
+            margin-right: 15px;
+        }
+        .header-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .form-field {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .form-field label {
+            width: 180px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        .form-field input[type="text"], .form-field input[type="number"], .form-field input[type="email"], .form-field select {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .actions button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            border: none;
+        }
+        .save-btn {
+            background-color: #3498db;
+            color: white;
+            margin-right: 10px;
+        }
+        .reset-btn {
+            background-color: #7f8c8d;
+            color: white;
+        }
+        .back-btn {
+            background-color: #95a5a6;
+            color: white;
+            padding: 8px 15px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Header con Logo y Título -->
+    <div class="header">
+        <a href="/" th:href="@{/}">
+            <img src="logo.png" alt="Logo" class="logo" />
+        </a>
+        <div class="header-title">Panel de Administración</div>
+    </div>
+
+    <!-- Gestión de Usuarios -->
+    <div class="section user-management">
+        <div class="section-title">Gestión de Usuarios</div>
+        <div class="form-field">
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" id="username" th:field="*{username}" placeholder="Nombre de Usuario">
+        </div>
+        <div class="form-field">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" th:field="*{email}" placeholder="correo@ejemplo.com">
+        </div>
+        <div class="form-field">
+            <label for="role">Rol de Usuario:</label>
+            <select id="role" th:field="*{rol}">
+                <option value="admin">Administrador</option>
+                <option value="editor">Editor</option>
+                <option value="viewer">Visualizador</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Configuración del Sistema -->
+    <div class="section system-settings">
+        <div class="section-title">Configuración del Sistema</div>
+        <div class="form-field">
+            <label for="timezone">Zona Horaria:</label>
+            <select id="timezone" th:field="*{zonaHoraria}">
+                <option value="GMT-5">GMT-5</option>
+                <option value="GMT-6">GMT-6</option>
+                <!-- Más opciones según tus necesidades -->
+            </select>
+        </div>
+        <div class="form-field">
+            <label for="language">Idioma Predeterminado:</label>
+            <select id="language" th:field="*{idioma}">
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+                <option value="fr">Francés</option>
+                <!-- Más opciones según tus necesidades -->
+            </select>
+        </div>
+    </div>
+
+    <!-- Reportes -->
+    <div class="section reports">
+        <div class="section-title">Reportes</div>
+        <div class="form-field">
+            <label for="report-type">Tipo de Reporte:</label>
+            <select id="report-type" th:field="*{tipoReporte}">
+                <option value="usuarios">Usuarios</option>
+                <option value="actividad">Actividad</option>
+                <option value="errores">Errores</option>
+            </select>
+        </div>
+        <div class="form-field">
+            <label for="report-period">Periodo:</label>
+            <select id="report-period" th:field="*{periodoReporte}">
+                <option value="diario">Diario</option>
+                <option value="semanal">Semanal</option>
+                <option value="mensual">Mensual</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Botones de Acción -->
+    <div class="section actions">
+        <button type="button" class="back-btn" onclick="window.location.href='/'">Regresar</button>
+        <button type="submit" class="save-btn">Guardar Cambios</button>
+        <button type="reset" class="reset-btn">Restablecer</button>
+    </div>
+</div>
+</body>
+</html>

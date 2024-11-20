@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:sec="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinWeb - Comienza a Vender</title>
+    
+</head>
+<body>
+    <!-- Header con logo y menú de navegación -->
+    <header th:fragment="header">
+        <div class="logo">
+            <img th:src="@{images/icon.jpeg}" alt="Logo FinWeb" class="findL">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/categoria}" sec:authorize="isAuthenticated()">Subir producto</a></li>
+                <li><a sec:authorize="isAuthenticated()">Categorias Destacadas</a>
+                    <ul>
+                        <li><a  th:href="@{/listImg}">Ver todo</a></li>
+                        <li><a th:href="@{/listImg}" >Publicado</a></li>
+                    </ul>
+                </li>
+                <li><a th:href="@{/quien}">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+        <div class="register-btn" sec:authorize="!isAuthenticated()">
+            <a th:href="@{/login}"><button>Iniciar Sesion</button></a>
+        </div>
+        
+        
+        <div class="dropdown"  sec:authorize="isAuthenticated()">
+        <button class="dropdown-button">
+            <img th:src="@{images/usu.png}" alt="Icono de usuario" class="user-icon">
+        </button>
+        <div class="dropdown-content">
+            <button class="dropdown-option">Editar perfil</button>
+            
+            <form th:action="@{/logout}" method="post">
+            	<button class="dropdown-option" type="submit">Cerrar seccion</button>
+            </form>
+            
+        </div>
+    </div>
+    </header>
+
+</body>
+</html>
